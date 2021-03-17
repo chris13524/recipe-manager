@@ -10,5 +10,6 @@ Recipe manager build for a school project!
 
 ```bash
 npm install
+cp .env.development .env.local
 npm run dev
 ```

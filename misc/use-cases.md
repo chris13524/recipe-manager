@@ -1,0 +1,38 @@
+# Use Cases
+
+- User creates an account
+  - User provides identifying information
+  - User provides authenticating information
+  - User provides delivery information
+  - System creates account and stores information
+- User logs in
+  - User provides identifying information
+  - User provides authenticating information
+  - System retrieves user's identity and authenticates it
+- User can change their email
+  - User authenticates themselves
+  - User provides new email
+  - System saves new email
+- User can change their password
+  - User authenticates themselves
+  - User provides new password
+  - System saves new password
+- User can receive content via email
+  - At a user's scheduled delivery time
+  - System reads user configuration
+  - At scheduled time system queries content provider
+  - System sends content to delivery provider
+- User can vew content history
+  - User logs in
+  - User requests content history
+  - System presents content history
+  - User selects content from history
+  - System presents desired content history
+- User can change delivery schedule
+  - User authenticates themselves
+  - User provides new delivery schedule
+  - System saves new delivery schedule
+- User can configure content
+  - User authenticates themselves
+  - User selects which content providers to receive content from
+  - System saves new content configuration
