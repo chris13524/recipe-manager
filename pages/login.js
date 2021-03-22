@@ -8,7 +8,7 @@ import Link from 'next/link'
 import {form} from "./form.module.scss";
 import {login} from "./login.module.scss";
 
-export default Login = () => {
+export default () => {
   const { mutateUser } = useUser({
     redirectTo: '/profile-sg',
     redirectIfFound: true,
