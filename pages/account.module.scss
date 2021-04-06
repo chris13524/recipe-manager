@@ -1,0 +1,27 @@
+.account {
+  max-width: 21rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.accountItem {
+  border: thin solid black;
+  padding: 8px;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: black;
+
+  transition: background-color 200ms, color 200ms;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.accountItem + .accountItem {
+  margin-top: 16px;
+}

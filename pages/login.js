@@ -10,7 +10,7 @@ import {login} from "./login.module.scss";
 
 export default () => {
   const { mutateUser } = useUser({
-    redirectTo: '/profile-sg',
+    redirectTo: '/account',
     redirectIfFound: true,
   })
 

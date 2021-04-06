@@ -1,6 +1,14 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Router from 'next/router';
 
-export default function Home() {
+export function getServerSideProps() {
+  return { props: { ssr: true } };
+}
+
+export default function Home({ ssr }) {
+  console.log(ssr);
+  if (!ssr) Router.push("/account");
+
   return (
     <div className="container">
       <Head>

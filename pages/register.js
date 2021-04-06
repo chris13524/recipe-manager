@@ -10,7 +10,7 @@ import {register} from "./register.module.scss";
 
 const Register = () => {
   const { mutateUser } = useUser({
-    redirectTo: '/profile-sg',
+    redirectTo: '/account',
     redirectIfFound: true,
   })
 
