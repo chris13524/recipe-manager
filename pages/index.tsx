@@ -1,13 +1,11 @@
 import Head from 'next/head';
 import Router from 'next/router';
-
-export function getServerSideProps() {
-  return { props: { ssr: true } };
-}
+import useUser from '../lib/useUser';
 
 export default function Home({ ssr }) {
-  console.log(ssr);
-  if (!ssr) Router.push("/account");
+  const { user } = useUser({
+    redirectTo: '/account',
+  });
 
   return (
     <div className="container">

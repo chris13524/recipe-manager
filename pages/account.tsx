@@ -5,8 +5,9 @@ import Router from 'next/router';
 import Link from 'next/link';
 
 export default ({ ssr }) => {
-    const { user } = useUser();
-    if (!ssr && user == null) Router.push("/account");
+    const { user } = useUser({
+      redirectTo: '/login',
+    });
 
     return (<Layout>
         <div className={account}>

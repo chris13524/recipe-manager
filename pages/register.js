@@ -31,7 +31,8 @@ const Register = () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body),
         })
-      )
+      );
+      alert("Registration successful, please login now.");
     } catch (error) {
       console.error('An unexpected error happened:', error)
       setErrorMsg(error.data.message)
