@@ -2,7 +2,7 @@
 
 - /register
 - /login
-- /me
+- /account
   - /content-history
   - /change-email
   - /change-password
