@@ -1,7 +1,5 @@
 import Head from 'next/head';
-import Router from 'next/router';
 import Link from 'next/link';
-import useUser from '../lib/useUser';
 
 export default function Home({ ssr }) {
   return (
