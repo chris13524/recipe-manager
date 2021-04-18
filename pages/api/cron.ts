@@ -27,15 +27,13 @@ const Cron = async (req: NextApiRequest, res: NextApiResponse) => {
         const message = `Today's article is ${articleTitle} and can be found here: ${articleUrl}`;
 
         sg.setApiKey(process.env.SENDGRID_API_KEY);
-        const msg = {
+        await sg.send({
             to: user.email,
             from: process.env.SENDGRID_FROM,
             subject: "Your daily content delivery",
             text: message,
             html: message,
-        };
-
-        await sg.send(msg);
+        });
     }
 
     res.status(204).end();
