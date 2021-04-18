@@ -35,7 +35,7 @@ const Cron = async (req: NextApiRequest, res: NextApiResponse) => {
             html: message,
         };
 
-        console.log(await sg.send(msg));
+        await sg.send(msg);
     }
 
     res.status(204).end();
