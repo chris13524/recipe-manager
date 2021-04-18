@@ -23,7 +23,7 @@ export default withSession(async (req, res) => {
     if (await verify(hashedPassword, password)) {
         req.session.set('user', user);
         await req.session.save();
-        res.status(200).json({});
+        res.status(204).end();
     } else {
         res.status(403).json({ message: "Invalid email or password" });
         return;
