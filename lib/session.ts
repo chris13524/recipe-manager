@@ -1,9 +1,13 @@
 // MODIFIED FROM: https://github.com/vercel/next.js/blob/canary/examples/with-iron-session/lib/session.js
 
 // this file is a wrapper with defaults to be used in both API routes and `getServerSideProps` functions
-import { withIronSession } from 'next-iron-session'
+import { NextApiRequest, NextApiResponse } from 'next'
+import { Session, withIronSession } from 'next-iron-session'
 
-export default function withSession(handler) {
+export default function withSession(handler: (
+  req: NextApiRequest & { session: Session },
+  res: NextApiResponse
+) => any) {
   return withIronSession(handler, {
     password: process.env.SECRET_COOKIE_PASSWORD,
     cookieName: 'chris13524/recipe-manager',
