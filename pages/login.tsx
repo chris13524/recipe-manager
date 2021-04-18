@@ -5,16 +5,16 @@ import useUser from '../lib/useUser'
 import Layout from '../components/Layout'
 import fetchJson from '../lib/fetchJson'
 import Link from 'next/link'
-import {form} from "./form.module.scss";
-import {register} from "./register.module.scss";
+import { form } from "./form.module.scss";
+import { page } from "./page.module.scss";
 
-const Register = () => {
+const Login = () => {
   const { mutateUser } = useUser({
     redirectTo: '/account',
     redirectIfFound: true,
-  })
+  });
 
-  const [errorMsg, setErrorMsg] = useState('')
+  const [errorMsg, setErrorMsg] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -26,13 +26,12 @@ const Register = () => {
 
     try {
       await mutateUser(
-        fetchJson('/api/register', {
+        fetchJson('/api/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body),
         })
-      );
-      alert("Registration successful, please login now.");
+      )
     } catch (error) {
       console.error('An unexpected error happened:', error)
       setErrorMsg(error.data.message)
@@ -41,8 +40,8 @@ const Register = () => {
 
   return (
     <Layout>
-      <div className={register}>
-        <h1>Register</h1>
+      <div className={page}>
+        <h1>Login</h1>
         <form onSubmit={handleSubmit} className={form}>
           <label>
             <span>Email</span>
@@ -53,14 +52,14 @@ const Register = () => {
             <input type="password" name="password" required />
           </label>
 
-          <button type="submit">Register</button>
+          <button type="submit">Login</button>
 
           {errorMsg && <p className="error">{errorMsg}</p>}
         </form>
-        <p>Already have an account? Login <Link href="/login">here</Link>.</p>
+        <p>Don't have an account? Register <Link href="/register">here</Link>.</p>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Register
+export default Login;

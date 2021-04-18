@@ -7,7 +7,7 @@ export default withSession(async (req, res) => {
   const { email, password } = await req.body;
 
   if (!email || !password) {
-    res.status(400).json({ message: "missing or blank email or password" });
+    res.status(400).json({ message: "Missing or empty email or password" });
     return;
   }
 

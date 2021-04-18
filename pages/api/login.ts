@@ -14,7 +14,7 @@ export default withSession(async (req, res) => {
     const user = await (await knex())<User>("users").where("email", email).first();
 
     if (!user) {
-        res.status(403).json({ message: "invalid email or password" });
+        res.status(403).json({ message: "Invalid email or password" });
         return;
     }
 
@@ -25,7 +25,7 @@ export default withSession(async (req, res) => {
         await req.session.save();
         res.status(200).json({});
     } else {
-        res.status(403).json({ message: "invalid email or password" });
+        res.status(403).json({ message: "Invalid email or password" });
         return;
     }
 });

@@ -1,4 +1,4 @@
-// COPIED FROM: https://github.com/vercel/next.js/blob/canary/examples/with-iron-session/lib/useUser.js
+// MODIFIED FROM: https://github.com/vercel/next.js/blob/canary/examples/with-iron-session/lib/useUser.js
 
 import { useEffect } from 'react'
 import Router from 'next/router'
