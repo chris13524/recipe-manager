@@ -27,7 +27,6 @@ const Cron = async (req: NextApiRequest, res: NextApiResponse) => {
         const message = `Today's article is ${articleTitle} and can be found here: ${articleUrl}`;
 
         sg.setApiKey(process.env.SENDGRID_API_KEY);
-        console.log(process.env.SENDGRID_API_KEY);
         const msg = {
             to: user.email,
             from: process.env.SENDGRID_FROM,
